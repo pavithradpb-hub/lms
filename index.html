@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Management System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <h2>LMS Portal</h2>
+
+        <ul>
+
+            <li class="active" onclick="showSection('dashboard')">
+                🏠 Dashboard
+            </li>
+
+            <li onclick="showSection('courses')">
+                📚 My Courses
+            </li>
+
+            <li onclick="showSection('assignments')">
+                📝 Assignments
+            </li>
+
+            <li onclick="showSection('progress')">
+                📈 Progress
+            </li>
+
+            <li onclick="showSection('profile')">
+                👤 Profile
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main">
+
+        <!-- Header -->
+
+        <header>
+
+            <h1>Learning Management System</h1>
+
+            <div class="header-right">
+
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search Course..."
+                    onkeyup="searchCourse()"
+                >
+
+                <button id="themeBtn" onclick="toggleTheme()">
+                    🌙
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Dashboard -->
+
+        <section id="dashboard" class="content active-section">
+
+            <h2>Dashboard</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Courses</h3>
+                    <p id="courseCount">4</p>
+                </div>
+
+                <div class="card">
+                    <h3>Assignments</h3>
+                    <p>5 Pending</p>
+                </div>
+
+                <div class="card">
+                    <h3>Average Score</h3>
+                    <p>88%</p>
+                </div>
+
+                <div class="card">
+                    <h3>Attendance</h3>
+                    <p>96%</p>
+                </div>
+
+            </div>
+
+            <div class="announcement">
+
+                <h3>Latest Announcement</h3>
+
+                <p>
+                    Web Development Quiz will be conducted this Friday.
+                    Complete all pending assignments before Thursday.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Courses -->
+
+        <section id="courses" class="content">
+
+            <h2>My Courses</h2>
+
+            <div class="course-list" id="courseList">
+
+                <div class="course">
+                    <h3>HTML & CSS</h3>
+                    <p>Progress : 90%</p>
+                    <button>Continue</button>
+                </div>
+
+                <div class="course">
+                    <h3>Java Programming</h3>
+                    <p>Progress : 70%</p>
+                    <button>Continue</button>
+                </div>
+
+                <div class="course">
+                    <h3>Database Management</h3>
+                    <p>Progress : 65%</p>
+                    <button>Continue</button>
+                </div>
+
+                <div class="course">
+                    <h3>JavaScript Basics</h3>
+                    <p>Progress : 82%</p>
+                    <button>Continue</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Assignments -->
+
+        <section id="assignments" class="content">
+
+            <h2>Upcoming Assignments</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Course</th>
+                        <th>Task</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>HTML & CSS</td>
+                        <td>Portfolio Website</td>
+                        <td>12 July</td>
+                        <td>Pending</td>
+                    </tr>
+
+                    <tr>
+                        <td>Java</td>
+                        <td>Mini Project</td>
+                        <td>15 July</td>
+                        <td>In Progress</td>
+                    </tr>
+
+                    <tr>
+                        <td>DBMS</td>
+                        <td>Normalization</td>
+                        <td>18 July</td>
+                        <td>Pending</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Progress -->
+
+        <section id="progress" class="content">
+
+            <h2>Learning Progress</h2>
+
+            <div class="progress-box">
+
+                <div class="progress-item">
+
+                    <p>HTML & CSS</p>
+
+                    <div class="progress-bar">
+                        <span style="width:90%"></span>
+                    </div>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <p>Java Programming</p>
+
+                    <div class="progress-bar">
+                        <span style="width:70%"></span>
+                    </div>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <p>DBMS</p>
+
+                    <div class="progress-bar">
+                        <span style="width:65%"></span>
+                    </div>
+
+                </div>
+
+                <div class="progress-item">
+
+                    <p>JavaScript</p>
+
+                    <div class="progress-bar">
+                        <span style="width:82%"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Profile -->
+
+        <section id="profile" class="content">
+
+            <h2>Student Profile</h2>
+
+            <div class="profile-card">
+
+                <h3>John Doe</h3>
+
+                <p><strong>Student ID:</strong> LMS1024</p>
+
+                <p><strong>Email:</strong> john@example.com</p>
+
+                <p><strong>Department:</strong> Computer Science</p>
+
+                <p><strong>Semester:</strong> V</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
